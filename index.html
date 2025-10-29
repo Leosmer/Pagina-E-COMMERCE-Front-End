@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda Online</title>
+        <link rel="icon" href="IMG/favicon.ico" type="image/x-icon">
+    <script src="js/APP.js"></script>
+    <link rel="stylesheet" href="CSS/Style1.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header>
+        <h1>Leo´s Merch</h1>
+        <div class="carrito-icono" onclick="mostrarCarrito()">
+            🛒 <span id="contador-carrito">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="productos">
+            <h2 class="h2_principal">Nuestros Productos de la mas alta calidad</h2>
+            <div class="producto">
+                <img src="IMG/camisa_barcelona2024_2025" alt="Camiseta">
+                <h3>Camiseta</h3>
+                <p>Kit principal del fubol club Barcelona.</p>
+                <p class="precio">$199.99</p>
+                <p class="stock">Stock: <span id="stock-1">5</span></p>
+                <button class="añadir-carrito" onclick="añadirAlCarrito(1, 'Camiseta', 199.99)">Añadir al carrito</button>
+            </div>
+            
+            <div class="producto">
+                <img src="IMG/pantalones_cargo.webp" alt="Pantalón">
+                <h3>Pantalón</h3>
+                <p>Pantalón cargo.</p>
+                <p class="precio">$20</p>
+                <p class="stock">Stock: <span id="stock-2">3</span></p>
+                <button class="añadir-carrito" onclick="añadirAlCarrito(2, 'Pantalón', 20)">Añadir al carrito</button>
+            </div>
+            
+            <div class="producto">
+                <img src="IMG/zapatos_jordan1.webp" alt="Zapatos">
+                <h3>Zapatos</h3>
+                <p>Jordan 1 OG.</p>
+                <p class="precio">$520</p>
+                <p class="stock">Stock: <span id="stock-3">2</span></p>
+                <button class="añadir-carrito" onclick="añadirAlCarrito(3, 'Zapatos', 520)">Añadir al carrito</button>
+            </div>
+        </section>
+
+        <!-- Sección del carrito (oculta inicialmente) -->
+        <section id="carrito-compras" class="carrito-compras">
+
+            <h2>Tu Carrito de Compras</h2>
+            <div id="items-carrito" class="items-carrito">
+                <!-- Los productos del carrito se añadirán aquí dinámicamente -->
+            </div>
+            <div class="total-carrito">
+                <button onclick="calcularTotal()">Calcular Total</button>
+                <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <section class="registro">
+            <h2>Regístrate</h2>
+            <form id="formulario-registro" onsubmit="validarRegistro(event)">
+                <div class="campo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                
+                <div class="campo">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="campo">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" required>
+                    <small>Mínimo 8 caracteres, 1 mayúscula y 1 número</small>
+                </div>
+                
+                <button type="submit">Registrarse</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; | Esta tienda fue creada por Leosmer Villegas</p>
+        <a href="https://www.instagram.com/motorepuestosthedoctor/" target="_blank">instagram</a>
+        <a href="">facebook</a>
+        
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
